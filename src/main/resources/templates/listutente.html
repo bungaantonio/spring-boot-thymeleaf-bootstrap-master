@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="utenteregistrationsystem">
+  <head>
+    <meta charset="utf-8" />
+    <title>BELab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="../css/app.css"
+      th:href="@{/css/app.css}"
+    />
+  </head>
+  <body>
+    <div class="page-header text-center">
+      <h2>Utente Sistema de Registro</h2>
+    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <a href="#/home" class="btn btn-info navbar-btn" role="button">Home</a>
+        <a
+          href="#/register-new-utente"
+          class="btn btn-info navbar-btn"
+          role="button"
+          >Registar Novo Utente</a
+        >
+        <a
+          href="#/list-all-utente"
+          class="btn btn-info navbar-btn"
+          role="button"
+          >Listar Todos Utente</a
+        >
+      </div>
+    </nav>
+    <div ng-view></div>
+
+    <script th:src="@{/js/angular.js}" src="../js/angular.js"></script>
+    <script
+      th:src="@{/js/angular-resource.js}"
+      src="../js/angular-resource.js"
+    ></script>
+    <script
+      th:src="@{/js/angular-route.js}"
+      src="../js/angular-route.js"
+    ></script>
+    <script th:src="@{/js/app.js}" src="../js/app.js"></script>
+    <script
+      th:src="@{/js/controller.js}"
+      src="../js/controller.js"
+    ></script>
+    <link
+      th:href="@{/css/bootstrap.min.css}"
+      rel="stylesheet"
+      href="../css/bootstrap.min.css"
+    />
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="utenteregistrationsystem">
+  <head>
+    <meta charset="utf-8" />
+    <title>BELab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/app.css" th:href="@{/css/app.css}" />
+  </head>
+  <body>
+    <div class="page-header text-center">
+      <h2>Utente Sistema de Registro</h2>
+    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <a href="#/" class="btn btn-info navbar-btn" role="button">Home</a>
+        <a
+          href="#/register-new-utente"
+          class="btn btn-info navbar-btn"
+          role="button"
+          >Registar Novo Utente</a
+        >
+        <a
+          href="#/list-all-utente"
+          class="btn btn-info navbar-btn"
+          role="button"
+          >Listar Todos Utente</a
+        >
+      </div>
+    </nav>
+    <div class="container">
+      <div class="alert alert-danger" role="alert" ng-if="errorMessage">
+        {{errorMessage}}
+      </div>
+      <div class="panel panel-default">
+        <div class="alert alert-success">
+          <span class="lead">Registrar Novo Utente</span>
+          <p>Por favor usa um nome unico</p>
+        </div>
+        <div class="panel-body">
+          <div class="container">
+            <form
+              ng-submit="submitUtenteForm()"
+              name="myForm"
+              class="form-horizontal"
+            >
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label class="col-md-2 custom-control-label" for="unome">
+                    Nome
+                  </label>
+                  <div class="col-md-7">
+                    <input
+                      type="text"
+                      ng-model="utente.nome"
+                      id="unome"
+                      class="form-control input-group-sm"
+                      placeholder="Entre com o seu nome"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label class="col-md-2 custom-control-label" for="morada"
+                    >Morada</label
+                  >
+                  <div class="col-md-7">
+                    <input
+                      type="text"
+                      ng-model="utente.morada"
+                      id="morada"
+                      class="form-control input-group-sm"
+                      placeholder="Entre com sua morada"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label class="col-md-2 form-control-sm" for="contacto"
+                    >Contacto</label
+                  >
+                  <div class="col-md-7">
+                    <input
+                      type="text"
+                      ng-model="utente.contacto"
+                      class="form-control input-group-sm"
+                      id="contacto"
+                      placeholder="Entre com seu contacto"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-check flotRight">
+                  <input
+                    type="submit"
+                    value="Registar Utente"
+                    class="btn btn-primary btn-sm"
+                  />
+                  <button
+                    type="button"
+                    ng-click="resetForm()"
+                    class="btn btn-warning btn-sm"
+                  >
+                    Resetar Formulario
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-view></div>
+    <script th:src="@{/js/angular.js}" src="../js/angular.js"></script>
+    <script
+      th:src="@{/js/angular-resource.js}"
+      src="../js/angular-resource.js"
+    ></script>
+    <script
+      th:src="@{/js/angular-route.js}"
+      src="../js/angular-route.js"
+    ></script>
+    <script th:src="@{/js/app.js}" src="../js/app.js"></script>
+    <script th:src="@{/js/controller.js}" src="../js/controller.js"></script>
+    <link
+      th:href="@{/css/bootstrap.min.css}"
+      rel="stylesheet"
+      href="../css/bootstrap.min.css"
+    />
+  </body>
+</html>
